@@ -129,69 +129,74 @@ var game = [
 describe('Bowling', function () {
 
     it('should be defined', function () {
-        expect(bowling).toBeDefined();
+        expect(Bowling).toBeDefined();
     });
 
     describe('throwBalls:', function () {
+        var bowling0 = new Bowling();
         it('should be function', function () {
-            expect(bowling.throwBalls).toEqual(jasmine.any(Function));
-        });
-    });
-    describe('throwBalls:', function () {
-        it('should be function', function () {
-            expect(bowling.throwBalls).toEqual(jasmine.any(Function));
+            expect(bowling0.throwBalls).toEqual(jasmine.any(Function));
         });
     });
     describe('getScore:', function () {
+        var bowling1 = new Bowling();
         it('should be function', function () {
-            expect(bowling.getScore).toEqual(jasmine.any(Function));
+            expect(bowling1.getScore).toEqual(jasmine.any(Function));
         });
 
         describe('first Open Frame', function () {
-            var frame = bowling.throwBalls(openFrame);
+            var bowling2 = new Bowling();
+            bowling2.throwBalls(openFrame);
 
             it('should return sum of broken pins', function () {
-                expect(bowling.getScore(frame)).toEqual(7);
+                expect(bowling2.getScore()).toEqual(7);
             });
         });
 
         describe('second Open Frame', function () {
-            var frame = bowling.throwBalls(openFrame2);
+            var bowling3 = new Bowling();
+            bowling3.throwBalls(openFrame2);
             it('should return sum of all broken pins', function () {
-                expect(bowling.getScore(frame)).toEqual(14);
+                expect(bowling3.getScore()).toEqual(14);
             });
         });
 
         describe('strike', function () {
-            var frame = bowling.throwBalls(strike);
+            var bowling4 = new Bowling();
+            bowling4.throwBalls(strike);
             it('should return sum of broken pins and 2 next ball throws', function () {
-                expect(bowling.getScore(frame)).toEqual(14);
+                expect(bowling4.getScore()).toEqual(14);
             });
         });
         describe('double', function () {
-            var frame = bowling.throwBalls(double);
+            var bowling5 = new Bowling();
+            bowling5.throwBalls(double);
             it('should return sum of broken pins(10) and 2 next ball throws (twice)', function () {
-                expect(bowling.getScore(frame)).toEqual(35);
+                expect(bowling5.getScore()).toEqual(35);
             });
         });
 
         describe('triple', function () {
-            var frame = bowling.throwBalls(triple);
+            var bowling6 = new Bowling();
+            bowling6.throwBalls(triple);
             it('should return sum of broken pins(10) and 2 next ball throws (3 times)', function () {
-                expect(bowling.getScore(frame)).toEqual(65);
+                expect(bowling6.getScore()).toEqual(65);
             });
         });
 
-         describe('spare', function () {
-            var frame = bowling.throwBalls(spare);
+        describe('spare', function () {
+            var bowling7 = new Bowling();
+            bowling7.throwBalls(spare);
             it('should return sum of broken pins(10) and 1 next ball throw', function () {
-                expect(bowling.getScore(frame)).toEqual(26);
+                expect(bowling7.getScore()).toEqual(26);
             });
-        });/**/
+        });
+
         describe('the game', function () {
-            var frame = bowling.throwBalls(game);
+            var bowling8 = new Bowling();
+            bowling8.throwBalls(game);
             it('should return 133', function () {
-                expect(bowling.getScore(frame)).toEqual(133);
+                expect(bowling8.getScore()).toEqual(133);
             });
         });
     });

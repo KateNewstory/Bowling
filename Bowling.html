@@ -8,7 +8,78 @@
 </head>
 <body>
 <script>
-    window.onload = bowling.playGame();
+    window.onload = function (){
+        var game = [
+            [
+                //Frame 0
+                //Score 1+4=5
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+                [0, 0, 0, 0, 0, 1, 1, 1, 1, 0]
+            ],
+            [
+                //Frame 1
+                //Score 4+5+5=14
+                [0, 0, 0, 0, 0, 0, 1, 1, 1, 1],
+                [0, 1, 1, 1, 1, 1, 0, 0, 0, 0]
+            ],
+            [
+                //Frame 2
+                //Score 6+4+14=24 + next throwBall(5)=29
+                [0, 0, 0, 0, 1, 1, 1, 1, 1, 1],
+                [1, 1, 1, 1, 0, 0, 0, 0, 0, 0]
+            ],
+            [
+                //Frame 3
+                //Score 5+5+29=39 + next throwBall(10)=49
+                [0, 0, 0, 0, 0, 1, 1, 1, 1, 1],
+                [1, 1, 1, 1, 1, 0, 0, 0, 0, 0]
+            ],
+            [
+                //Frame 4
+                //Score 10+49=59 + 2 next throwBall(0+1)=60
+                [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+            ],
+            [
+                //Frame 5
+                //Score 0+1+60=61
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+            ],
+            [
+                //Frame 6
+                //Score 7+3+61=71+ next throwBall(6)=77
+                [1, 1, 1, 1, 1, 1, 1, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 1, 1, 1]
+            ],
+            [
+                //Frame 7
+                //Score 6+4+77=87+ next throwBall(10)=97
+                [1, 1, 1, 1, 1, 1, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 1, 1, 1, 1]
+            ],
+            [
+                //Frame 8
+                //Score 10+97=107 + 2 next throwBall(2+8)=117
+                [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+            ],
+            [
+                //Frame 9
+                //Score 2+8+117=127 + next throwBall(6)=133
+                [1, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 1, 1, 1, 1, 1, 1, 1, 1]
+            ],
+            [
+                //Frame 10 (addition)
+                [1, 1, 1, 1, 1, 1, 0, 0, 0, 0]
+            ]
+
+        ];//133
+        var bowling = new Bowling();
+        //example game
+        bowling.playGame(game);
+        //random game
+        //bowling.playGame();
+    }
 </script>
 </body>
 </html>
